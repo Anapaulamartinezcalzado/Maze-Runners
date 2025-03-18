@@ -1,0 +1,14 @@
+C:\Users\Zule\Desktop\Maze Runners\obj\Debug\net8.0\Maze Runners.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Zule\Desktop\Maze Runners\obj\Debug\net8.0\Maze Runners.AssemblyInfoInputs.cache
+C:\Users\Zule\Desktop\Maze Runners\obj\Debug\net8.0\Maze Runners.AssemblyInfo.cs
+C:\Users\Zule\Desktop\Maze Runners\obj\Debug\net8.0\Maze Runners.csproj.CoreCompileInputs.cache
+C:\Users\Zule\Desktop\Maze Runners\bin\Debug\net8.0\Maze Runners.exe
+C:\Users\Zule\Desktop\Maze Runners\bin\Debug\net8.0\Maze Runners.deps.json
+C:\Users\Zule\Desktop\Maze Runners\bin\Debug\net8.0\Maze Runners.runtimeconfig.json
+C:\Users\Zule\Desktop\Maze Runners\bin\Debug\net8.0\Maze Runners.dll
+C:\Users\Zule\Desktop\Maze Runners\bin\Debug\net8.0\Maze Runners.pdb
+C:\Users\Zule\Desktop\Maze Runners\obj\Debug\net8.0\Maze Runners.dll
+C:\Users\Zule\Desktop\Maze Runners\obj\Debug\net8.0\refint\Maze Runners.dll
+C:\Users\Zule\Desktop\Maze Runners\obj\Debug\net8.0\Maze Runners.pdb
+C:\Users\Zule\Desktop\Maze Runners\obj\Debug\net8.0\Maze Runners.genruntimeconfig.cache
+C:\Users\Zule\Desktop\Maze Runners\obj\Debug\net8.0\ref\Maze Runners.dll
