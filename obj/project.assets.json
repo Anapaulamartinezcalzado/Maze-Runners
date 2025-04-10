@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Zule\\Desktop\\Maze Runners\\Maze Runners.csproj",
-      "projectName": "Maze Runners",
-      "projectPath": "C:\\Users\\Zule\\Desktop\\Maze Runners\\Maze Runners.csproj",
+      "projectUniqueName": "C:\\Users\\Zule\\Desktop\\MazeRunners2\\MazeRunners2.csproj",
+      "projectName": "MazeRunners2",
+      "projectPath": "C:\\Users\\Zule\\Desktop\\MazeRunners2\\MazeRunners2.csproj",
       "packagesPath": "C:\\Users\\Zule\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Zule\\Desktop\\Maze Runners\\obj\\",
+      "outputPath": "C:\\Users\\Zule\\Desktop\\MazeRunners2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Zule\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.402/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
