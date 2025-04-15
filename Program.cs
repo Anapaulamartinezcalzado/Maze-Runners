@@ -1,26 +1,30 @@
 ﻿using System;
+using System.Threading;
 using System.Reflection.Metadata;
 
 public class Program
 {
     private static bool isPlayer1Turn;
-
     public static void Main()
     {
        Maze maze = new Maze(25, 27);
-       maze.GenerateTramps(5);
-      
-       Player1 player1 = new Player1 ("P1", 1,1);
-       Player2 player2 = new Player2 ("P2", 5,5 );
-       
+       maze.GenerateTramps(15);
 
        string[] token = { "Maria", "Joseph", "Atenea", "Julio", "Mario" };
        string[] symbol  = { "@", "#", "$", "&", "*" };
+       Hability[] abilities = { new TrampImmunity(),  //trampa para @
+                                new Hability("Teletransportación", "Te permite moverte a cualquier lugar del mapa"),//trampa para #
+                                new Hability("Inmune a la paralización", "No puedes quedar paralizado"), //trampa para $
+                                new Hability("Inmune a la muerte", "No te resta vidas") //trampa para &
+                                };
+
+       Player1 player1 = new Player1 ("P1", 1,1 , abilities[0]);
+       Player2 player2 = new Player2 ("P2", 5,5 , "H" );
      
       Console.WriteLine("Elija un símbolo para su jugador");
       for (int i = 0; i < token.Length; i++)
       {
-          Console.WriteLine($"{token[i]}: {symbol[i]}");
+          Console.WriteLine($" {token[i]}: {symbol[i]} ");
       }
 
       Console.WriteLine("Elija un símbolo para su segundo jugador");
@@ -79,8 +83,29 @@ public class Program
             Console.Clear();
             maze.PrintMaze();
             
-            // Mostrar de quién es el turno
-            Console.WriteLine($"Turno del {(isPlayer1Turn ? "Jugador 1" : "Jugador 2")}");
+
+            Console.WriteLine($"Jugador 1 ({player1.Symbol}) - Salud: {player1.Health} {(player1.IsParalyzed ? "[PARALIZADO POR 1 MINUTO]" : "")}");
+            Console.WriteLine($"Jugador 2 ({player2.Symbol}) - Salud ({player2.Health}) {(player2.IsParalyzed ? "[PARALIZADO POR 1 MINUTO]" : "")}");
+            Console.WriteLine($"Turno del {(isPlayer1Turn ? "Jugador 1" : "Jugador 2")}");  // Mostrar de quién es el turno
+
+            if (player1.Health <= 0)
+            {
+                Console.WriteLine ("Jugador 2 gana!!!!!!");
+                break;
+            }
+            if (player2.Health <= 0)
+            {
+               Console.WriteLine("Jugador 1 gana!!!");
+               break;
+            }
+
+            if ((isPlayer1Turn && player1.IsParalyzed) || (!isPlayer1Turn && player2.IsParalyzed))
+            {
+                Console.WriteLine($"{(isPlayer1Turn ? "Jugador 1" : "Jugador 2" )} está paralizado por 1 minuto.Turno omitido");
+                isPlayer1Turn = !isPlayer1Turn;
+                Thread.Sleep(150);
+                continue;
+            }
 
             ConsoleKeyInfo keyInfo = Console.ReadKey(true);
             int prevX1 = player1.PositionX;

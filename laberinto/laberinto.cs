@@ -74,7 +74,18 @@ public class Maze
 
             if (board[trampX, trampY] == ' ')
             {
-                board[trampX, trampY] = '♠';
+                switch (i % 3)
+                {
+                    case 0 : 
+                    board[trampX, trampY] = '♠'; //trampa de daño
+                     break; 
+                    case 1:
+                     board[trampX, trampY] = '♣'; // Trampa de retroceso
+                     break; 
+                    case 2:
+                     board[trampX, trampY] = '♥'; //trampa de paralización
+                     break; 
+                }
             }
             else
             {
@@ -91,7 +102,7 @@ public class Maze
       
        char cell = board[x,y];
        
-       return cell == ' ' || cell == '♠';
+       return cell == ' ' || cell == '♠' || cell == '♣' || cell == '♥';
     }
     
 
@@ -112,27 +123,32 @@ public class Maze
         }
     }
 
-
-   /* public void PrintMaze()
-    {
-        for (int i = 0; i < Rows; i ++)
-        {
-            for (int j = 0; j < Columns; j++)
-            {
-                Console.Write(board[i,j] == 0 ? "█" : board[i,j]);
-            }
-            Console.WriteLine();
-        }
-    }*/
-
     public void PrintMaze()
 {
     for (int i = 0; i < Rows; i++)
     {
         for (int j = 0; j < Columns; j++)
         {
-            // Mostrar '█' para cualquier celda no definida o con valor 0
-            Console.Write(board[i,j] == '\0' ? "█" : board[i,j].ToString());
+           if (board[i,j] == '♠' )
+           {
+              Console.ForegroundColor = ConsoleColor.Red;
+              Console.Write("♠");
+           }
+           else if (board[i,j] == '♣')
+           {
+             Console.ForegroundColor = ConsoleColor.Green;
+              Console.Write("♣");
+           }
+           else if (board[i,j] == '♥' )
+           {
+             Console.ForegroundColor = ConsoleColor.Blue;
+              Console.Write("♥");
+           }
+           else
+           {
+             Console.Write(board[i,j] == '\0' ? "█" : board[i,j].ToString());
+           }
+           Console.ResetColor();
         }
         Console.WriteLine();
     }
