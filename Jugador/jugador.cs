@@ -30,10 +30,18 @@ public class Player2
     public int PositionW { get; set; }
     public int PositionZ { get; set; }
 
+<<<<<<< Maze-Runners
     public Player2(string symbol, int w , int z)
+=======
+    public Player2(string symbol, int w , int z, string hability )
+>>>>>>> local
     {
        Vida = 3;
        Symbol = symbol;
+<<<<<<< Maze-Runners
+=======
+       Hability = hability ;
+>>>>>>> local
        PositionW = w;
        PositionZ = z;
     }
